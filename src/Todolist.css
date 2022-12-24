@@ -1,0 +1,6 @@
+.listOfTodo{
+    display: flex;
+}
+.checkbox{
+    border-radius: 50%;
+}

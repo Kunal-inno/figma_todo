@@ -2,8 +2,10 @@
     color: blue;
     font-size: 1.9rem;
     margin-top: 8%;
+    cursor: pointer;
 }
 .header_div{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 19%;
 }

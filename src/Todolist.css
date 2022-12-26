@@ -1,6 +1,6 @@
-.listOfTodo{
+.list_Of_Todo{
     display: flex;
 }
-.checkbox{
+.check_box{
     border-radius: 50%;
 }

@@ -2,5 +2,6 @@
     display: flex;
 }
 .check_box{
-    border-radius: 50%;
+    width: 5%;
+    
 }

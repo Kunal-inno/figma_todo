@@ -17,7 +17,7 @@ const Todolist = () => {
             <h4>{task.name}</h4>
 
           </div>)
-        })};
+        })}
 
     </div>
     </>

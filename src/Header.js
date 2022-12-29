@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 import "./Header.css";
-
-import { FaPlus } from "react-icons/fa";
+import { CiCirclePlus } from "react-icons/ci";
 import PopUpTodo from "./PopUpTodo";
 
-const Header = () => {
+const Header = ({ data, handleAddTodo , HandleChange, inputTodo}) => {
+  console.log(data);
   const [show, setshow] = useState(false);
 
   return (
     <>
       <div className="header_div">
-        <h1>Today</h1>
+        <h1 className="today_heading">Today</h1>
+
         <span className="plus_Sign" onClick={() => setshow(!show)}>
-          <FaPlus />
+          <CiCirclePlus />
         </span>
       </div>
-      {show ? <PopUpTodo /> : null}
+      {show ? (
+        <PopUpTodo HandleChange={HandleChange} inputTodo={inputTodo}
+          addTodo={(d) => {
+            handleAddTodo(d);
+            setshow(false);
+          }}
+        />
+      ) : null}
     </>
   );
 };

@@ -1,4 +1,15 @@
+*{margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .parent_Div{
   margin-left: 35%;
   margin-right: 35%;
+}
+
+@media screen and (max-width:768px){
+    .parent_Div{ 
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

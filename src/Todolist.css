@@ -20,6 +20,12 @@ hr{
     background-color: red;
     border-radius: 50%;
 }
+.delete-btn{
+    color: rgb(203, 57, 57);
+    cursor: pointer;
+    font-size: 1.8rem;
+}
+
 
 /* @media screen and (min-width:1219px){
     .work_delay_teller{ 

@@ -3,8 +3,8 @@ import "./Header.css";
 import { CiCirclePlus } from "react-icons/ci";
 import PopUpTodo from "./PopUpTodo";
 
-const Header = ({ data, handleAddTodo , HandleChange, inputTodo}) => {
-  console.log(data);
+const Header = ({ data, handleAddTodo, HandleChange, inputTodo }) => {
+  // console.log(data);
   const [show, setshow] = useState(false);
 
   return (
@@ -17,7 +17,10 @@ const Header = ({ data, handleAddTodo , HandleChange, inputTodo}) => {
         </span>
       </div>
       {show ? (
-        <PopUpTodo HandleChange={HandleChange} inputTodo={inputTodo}
+        <PopUpTodo
+          HandleChange={HandleChange}
+          inputTodo={inputTodo}
+          setshow={setshow}
           addTodo={(d) => {
             handleAddTodo(d);
             setshow(false);

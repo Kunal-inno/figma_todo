@@ -1,45 +1,44 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
-// import PopUpTodo from "./PopUpTodo";
 import Todolist from "./Todolist";
 
 const App = () => {
-  // const [name, setname] = useState("");
-  // const newtodo={ id:Math.random(), name:todos, check: false }
-  const [todos, settodos] = useState("");
   const local_Api = [
     { id: 0, name: "Book flight", check: true },
     { id: 1, name: "Book hotel", check: true },
     { id: 2, name: "Book cab", check: false },
   ];
+  const [todos, settodos] = useState(local_Api);
 
-  const handleAddTodo=(newtodo)=>{
-    console.log(newtodo)
-    // <p>{props.}</p>
-    
-    // console.log(props)
-  }
-  const HandleChange=(e)=>{
-    e.preventDefault()
-    const newtodo={ id:Math.random(), name:todos, check: false }
-    handleAddTodo(newtodo)
-    settodos("")
+  const handleAddTodo = (newtodo) => {
+    const newlist = [...local_Api, newtodo];
+    settodos(newlist);
 
-  }
-  const inputTodo=(e)=>{
-    settodos(e.target.value)
-    
-  }
-  
+    console.log(newlist);
+  };
+  const HandleChange = (e, newTodo) => {
+    e.preventDefault();
+    settodos([...todos, { id: Math.random(), name: newTodo, check: false }]);
+  };
+
+  const removeTodo = (id) => {
+    const newlist = todos.filter((todos) => todos.id !== id);
+    settodos(newlist);
+    console.log(id);
+  };
 
   return (
     <>
       <div className="parent_Div">
         <div className="main_Todo_Div">
-          <Header data={local_Api} handleAddTodo={handleAddTodo} HandleChange={HandleChange} inputTodo={inputTodo}></Header>
+          <Header
+            data={todos}
+            handleAddTodo={handleAddTodo}
+            HandleChange={HandleChange}
+          ></Header>
           {/* {local_Api.map((todo)=><Header todo={todo}/>)} */}
-          <Todolist data={local_Api}  ></Todolist>
+          <Todolist data={todos} removeTodo={removeTodo}></Todolist>
           {/* <PopUpTodo></PopUpTodo> */}
         </div>
       </div>

@@ -17,6 +17,7 @@ button{
     border: 0px;
     font-size: 1.3rem;
     background: transparent;
+    cursor: pointer;
 }
 .input_card{
     position: absolute;
@@ -31,8 +32,17 @@ button{
     border-radius: 5%;
     border: 0.1px solid rgb(201, 201, 201);
 }
-button{
+/* button{
     cursor: pointer;
+} */
+.cancle-btn{
+    color: blue;
+    border: 0px;
+    font-weight: 400;
+    font-size: 1.3rem;
+    background: transparent;
+    cursor: pointer;
+
 }
 
 @media screen and (max-width:768px){

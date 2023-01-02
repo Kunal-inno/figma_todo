@@ -14,9 +14,15 @@ const App = () => {
   const handleAddTodo = (newtodo) => {
     const newlist = [...local_Api, newtodo];
     settodos(newlist);
-
     console.log(newlist);
   };
+
+  // add button
+
+  const AddTodo = (inputData) => {
+    settodos([...todos, { id: Math.random(), name: inputData, check: false }]);
+  };
+
   const HandleChange = (e, newTodo) => {
     e.preventDefault();
     settodos([...todos, { id: Math.random(), name: newTodo, check: false }]);
@@ -27,6 +33,13 @@ const App = () => {
     settodos(newlist);
     console.log(id);
   };
+  const editTodo = (id, nam) => {
+    // const newEditlist = todos.filter((todos) => todos.id === id);
+    // prompt(id,nam)
+    // settodos(newEditlist);
+
+    console.log(id, nam);
+  };
 
   return (
     <>
@@ -36,10 +49,15 @@ const App = () => {
             data={todos}
             handleAddTodo={handleAddTodo}
             HandleChange={HandleChange}
+            editTodo={editTodo}
+            AddTodo={AddTodo}
           ></Header>
-          {/* {local_Api.map((todo)=><Header todo={todo}/>)} */}
-          <Todolist data={todos} removeTodo={removeTodo}></Todolist>
-          {/* <PopUpTodo></PopUpTodo> */}
+
+          <Todolist
+            data={todos}
+            removeTodo={removeTodo}
+            editTodo={editTodo}
+          ></Todolist>
         </div>
       </div>
     </>

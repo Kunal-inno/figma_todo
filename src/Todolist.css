@@ -25,6 +25,11 @@ hr{
     cursor: pointer;
     font-size: 1.8rem;
 }
+.edit-btn{
+    color: green;
+    cursor: pointer;
+    font-size: 1.8rem;
+}
 
 
 /* @media screen and (min-width:1219px){
